@@ -1,13 +1,20 @@
 import 'package:fluttemp/Utils/Routes/app_router_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers:[
+        ChangeNotifierProvider(create(context)=> SomeChangenotifierClass())
+      ]
+    )
+    MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -17,8 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      routeInformationParser: AppRouter().router.routeInformationParser,
-      routerDelegate: AppRouter().router.routerDelegate,
+       routerConfig: AppRouter().router,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
