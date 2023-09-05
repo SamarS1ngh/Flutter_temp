@@ -3,7 +3,7 @@ import 'package:fluttemp/View/Pages/HomeScreen/home.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {
-  GoRouter router = GoRouter(routes: [
+ static final GoRouter router = GoRouter(routes: [
     GoRoute(
       name: AppRouteConsts.homeRouteName,
       path: '/',
