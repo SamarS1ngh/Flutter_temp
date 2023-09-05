@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp.router(
             debugShowCheckedModeBanner: false,
-            routerConfig: AppRouter().router,
+            routerConfig: AppRouter.router,
             theme: ThemeData(
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
